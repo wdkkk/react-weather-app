@@ -1,0 +1,109 @@
+@import ../globalStyle
+
+.InputText
+  outline: none
+  height: 40px
+  font-size: 20px
+  padding: 5px 20px
+
+.Button
+  background-color: $global-blue
+  color: #fff
+  display: inline-block
+  height: 40px
+  padding: 5px 20px
+  width: 125px
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  transition: background-color $transition
+  font-weight: 500
+  font-size: 20px
+
+  &:hover
+    background-color: $global-blue-hover
+
+.LocationDisplay
+  width: 300px
+
+  background-color: #fff
+  box-shadow: 4px 4px 21px 16px rgba(0, 0, 0, 0.2)
+  border-radius: 10px
+  padding: 30px
+
+  .LocationDisplayCity
+    text-align: center
+    font-size: 30px
+    font-weight: 700
+    font-style: italic
+
+  .LocationDisplayImage
+    width: 200px
+    height: 200px
+    background-color: #d3d3d3  
+    border-radius: 10px
+    margin: 0 auto
+    margin-top: 20px
+    animation: $loading-anim
+
+  .LocationDisplayTemp
+    font-weight: 500
+    font-size: 25px
+    margin-top: 30px
+
+a
+  color: #000
+  text-decoration: none
+
+.LocationDisplayLoading
+  width: 300px
+  height: 396px  
+  background-color: #fff
+  box-shadow: 4px 4px 21px 16px rgba(0, 0, 0, 0.2)
+  border-radius: 10px
+  padding: 30px
+
+
+
+  .LocationDisplayCity
+    height: 30px
+    background-color: #d3d3d3
+    animation: $loading-anim
+    
+    
+  .LocationDisplayImage
+    width: 200px
+    height: 200px
+    background-color: #d3d3d3  
+    border-radius: 10px
+    margin: 0 auto
+    margin-top: 20px
+    animation: $loading-anim
+
+  .LocationDisplayTemp
+    height: 25px
+    background-color: #d3d3d3  
+    margin-top: 30px
+    animation: $loading-anim
+
+  .LocationDisplayDesc
+    height: 18px
+    width: 50%
+    background-color: #d3d3d3  
+    margin-top: 5px
+    animation: $loading-anim
+    
+  
+.Alert
+  background-color: $global-blue
+  color: #fff
+  padding: 20px 40px
+  position: absolute
+  top: 25px
+  left: 25px
+  opacity: 0
+  transition: 0.3s ease
+
+.Alert.visible
+    opacity: 100
