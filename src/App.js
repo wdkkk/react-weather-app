@@ -2,8 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import pages from "./pages/index";
 
 function App() {
-  console.log(pages);
-
   return (
     <div className="App">
       <BrowserRouter>
