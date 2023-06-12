@@ -13,9 +13,13 @@ const Main = () => {
   const [alertText, setAlertText] = useState("");
 
   const addLocation = (location) => {
-    locations
-      ? setLocations([location, ...locations])
-      : setLocations([location]);
+    if (locations.find((l) => l.id === location.id) && locations.length !== 0) {
+      setLocations(locations.splice(0));
+      sentAlert("This location is already on the list");
+    } else
+      locations
+        ? setLocations([location, ...locations])
+        : setLocations([location]);
   };
 
   const addPromiseLocation = () => {
