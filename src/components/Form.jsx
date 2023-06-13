@@ -5,7 +5,7 @@ import Button from "../UI/Button";
 
 import useFetch from "../hooks/useFetch";
 
-import constants from "../constants";
+import constants from "../constants/constants";
 
 import "./style.sass";
 
