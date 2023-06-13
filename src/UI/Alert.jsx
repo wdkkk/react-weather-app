@@ -4,7 +4,7 @@ import "./style.sass";
 
 const Alert = ({ visible, text }) => {
   return (
-    <div>
+    <div className="AlertWrapper">
       {visible ? (
         <div className="Alert visible">{text}</div>
       ) : (

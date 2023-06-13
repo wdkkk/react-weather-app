@@ -2,15 +2,31 @@
   display: flex
   justify-content: space-between
   align-items: center
-  width: 450px
+  max-width: 450px
   margin: 0 auto
   padding-top: 30px
 
+  @media (max-width: 500px) 
+    flex-direction: column
+    height: 120px
+    padding: 30px 20px 0
+
+    .Button,
+    input
+      width: 100%
+
 .locations,
 .forecasts
-  width: 1000px
+  max-width: 1000px
   margin: 0 auto
   flex-wrap: wrap
   padding-top: 70px
   display: flex
   gap: 33.333px
+
+  @media (max-width: 1100px)
+    width: 650px
+    justify-content: space-between
+
+  @media (max-width: 720px)
+    width: 100%

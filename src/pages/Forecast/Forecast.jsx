@@ -9,13 +9,10 @@ import ForecastList from "../../components/ForecastList";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../../UI/Button";
-import { toJS } from "mobx";
 
 import "./style.sass";
-import weatherStore from "../../store/weatherStore";
 
 const Forecast = () => {
-  console.log(toJS(weatherStore.weatherLocations));
   const params = useParams();
   const navigate = useNavigate();
 
@@ -41,7 +38,6 @@ const Forecast = () => {
 
     setForecastData(res.data);
     setIsLoading(false);
-    console.log(res.data);
   };
 
   return (

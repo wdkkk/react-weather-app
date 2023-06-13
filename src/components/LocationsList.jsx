@@ -3,6 +3,8 @@ import React from "react";
 import LocationDisplay from "../UI/LocationDisplay";
 import LocationDisplayLoading from "../UI/LocationDisplayLoading";
 
+import "./style.sass";
+
 const LocationsList = ({ locations }) => {
   return (
     <div className="locations">
