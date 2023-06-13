@@ -11,9 +11,9 @@ import { toJS } from "mobx";
 
 import weatherStore from "../store/weatherStore";
 
-const Main = () => {
-  console.log(toJS(weatherStore.weatherLocations));
+import "./style.sass";
 
+const Main = () => {
   const [locations, setLocations] = useState(weatherStore.weatherLocations);
   const [alertState, setAlertState] = useState(false);
   const [alertText, setAlertText] = useState("");
@@ -44,19 +44,17 @@ const Main = () => {
     }, 3000);
   };
   return (
-    <div>
+    <div className="main">
       <Form
         addLocation={addLocation}
         sentAlert={sentAlert}
         addPromiseLocation={addPromiseLocation}
       />
-      <Button
-        style={{ margin: "0 auto", marginTop: 65, width: 500 }}
-        onClick={() => clearLocations()}
-      >
-        Clear
-      </Button>
-      ;
+
+      <div className="button__wrapper">
+        <Button onClick={() => clearLocations()}>Clear</Button>
+      </div>
+
       <LocationsList locations={locations} />
       <Alert visible={alertState} text={alertText} />
     </div>

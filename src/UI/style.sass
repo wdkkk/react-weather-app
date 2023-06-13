@@ -21,6 +21,9 @@
   font-weight: 500
   font-size: 20px
 
+  @media (max-width: 500px) 
+    width: 100% !important
+
   &:hover
     background-color: $global-blue-hover
 
@@ -28,7 +31,8 @@
   cursor: pointer
   
 .LocationDisplay,
-.ForecastDisplay
+.ForecastDisplay,
+.LocationDisplayLoading
   width: 300px
   margin-bottom: 50px
 
@@ -36,6 +40,10 @@
   box-shadow: 4px 4px 21px 16px rgba(0, 0, 0, 0.2)
   border-radius: 10px
   padding: 30px
+
+  @media (max-width: 720px)
+    width: 90%
+    margin: 0 auto
 
   .LocationDisplayCity
     text-align: center
@@ -74,7 +82,6 @@ a
   text-decoration: none
 
 .LocationDisplayLoading
-  width: 300px
   height: 396px  
   background-color: #fff
   box-shadow: 4px 4px 21px 16px rgba(0, 0, 0, 0.2)
@@ -88,6 +95,8 @@ a
     height: 30px
     background-color: #d3d3d3
     animation: $loading-anim
+    width: 80%
+    margin: 0 auto
     
     
   .LocationDisplayImage
@@ -113,7 +122,21 @@ a
     animation: $loading-anim
     
   
-.Alert
+.AlertWrapper
+  @media (max-width: 720px) 
+    width: 100vw
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vw
+    position: absolute
+    top: 0
+    pointer-events: none
+    user-select: none
+
+.Alert  
+  pointer-events: none
+  user-select: none
   background-color: $global-blue
   color: #fff
   padding: 20px 40px
@@ -122,9 +145,20 @@ a
   left: 25px
   opacity: 0
   transition: 0.3s ease
+  
+  @media (max-width: 720px) 
+    min-height: 20px
+    position: relative
+    left: auto
+    text-align: center
+    width: 80%
+    margin: 0 auto
 
 .Alert.visible
+    display: block
     opacity: 100
+
+  
 
 .loading-gif
   position: absolute
