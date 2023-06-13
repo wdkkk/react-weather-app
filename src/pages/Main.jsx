@@ -12,7 +12,9 @@ import { toJS } from "mobx";
 import weatherStore from "../store/weatherStore";
 
 const Main = () => {
-  const [locations, setLocations] = useState([]);
+  console.log(toJS(weatherStore.weatherLocations));
+
+  const [locations, setLocations] = useState(weatherStore.weatherLocations);
   const [alertState, setAlertState] = useState(false);
   const [alertText, setAlertText] = useState("");
 
@@ -26,6 +28,11 @@ const Main = () => {
 
   const addPromiseLocation = () => {
     setLocations(["loading", ...locations]);
+  };
+
+  const clearLocations = () => {
+    weatherStore.clearLocations();
+    setLocations([]);
   };
 
   const sentAlert = (text) => {
@@ -45,7 +52,7 @@ const Main = () => {
       />
       <Button
         style={{ margin: "0 auto", marginTop: 65, width: 500 }}
-        onClick={() => setLocations([])}
+        onClick={() => clearLocations()}
       >
         Clear
       </Button>
