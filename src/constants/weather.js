@@ -15,6 +15,10 @@ const weather = [
     name: "Rain",
     IMG_URL: "https://www.accuweather.com/images/weathericons/7.svg",
   },
+  {
+    name: "Mist",
+    IMG_URL: "https://www.accuweather.com/images/weathericons/5.svg",
+  },
 ];
 
 export default weather;

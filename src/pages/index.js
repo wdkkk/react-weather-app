@@ -1,4 +1,4 @@
-import Forecast from "./Forecast";
+import Forecast from "./Forecast/Forecast";
 import Main from "./Main";
 
 const pages = [

@@ -5,9 +5,7 @@ const useFetch = async (url) => {
     const response = await axios.get(url);
 
     return response.data;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 export default useFetch;
