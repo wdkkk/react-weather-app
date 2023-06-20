@@ -29,7 +29,16 @@
 
 .LocationDisplay
   cursor: pointer
-  
+  position: relative
+
+  &:hover
+    .LocationDisplayClose
+      opacity: 100
+    
+    .LocationDisplayCity
+        color: #462ab5    
+        text-shadow: 2px 4px 2px #462ab580
+
 .LocationDisplay,
 .ForecastDisplay,
 .LocationDisplayLoading
@@ -39,7 +48,7 @@
   background-color: #fff
   box-shadow: 4px 4px 21px 16px rgba(0, 0, 0, 0.2)
   border-radius: 10px
-  padding: 30px
+  padding: 30px      
 
   @media (max-width: 720px)
     width: 90%
@@ -51,6 +60,8 @@
     font-weight: 700
     font-style: italic
     text-shadow: 2px 4px 2px rgba(160,160,160,0.91)
+    transition: $transition
+    position: relative
 
   .LocationDisplayImage
     width: 200px
@@ -76,6 +87,35 @@
     font-weight: 500
     font-size: 25px
     margin-top: 30px
+
+  .LocationDisplayClose
+    height: 35px
+    width: 35px
+    background: $global-blue
+    border-radius: 5px
+    position: absolute
+    top: 15px
+    right: 15px
+    transition: $transition
+    opacity: 0
+
+    &:hover
+      background-color: $global-blue-hover
+
+    div
+      position: relative
+
+      &:after
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        content: "\d7"
+        font-size: 30px
+        color:#fff
+        line-height: 32px
+        text-align: center
 
 a
   color: #000
@@ -121,6 +161,7 @@ a
     margin-top: 5px
     animation: $loading-anim
     
+  
   
 .AlertWrapper
   @media (max-width: 720px) 

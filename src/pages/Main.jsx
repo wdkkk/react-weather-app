@@ -14,7 +14,6 @@ import weatherStore from "../store/weatherStore";
 import "./style.sass";
 
 const Main = () => {
-  const [locations, setLocations] = useState(weatherStore.weatherLocations);
   const [alertState, setAlertState] = useState(false);
   const [alertText, setAlertText] = useState("");
 
@@ -22,17 +21,10 @@ const Main = () => {
     const res = weatherStore.addLocation(location);
 
     if (res === false) sentAlert("This location is already on the list");
-
-    setLocations(toJS(weatherStore.weatherLocations));
-  };
-
-  const addPromiseLocation = () => {
-    setLocations(["loading", ...locations]);
   };
 
   const clearLocations = () => {
     weatherStore.clearLocations();
-    setLocations([]);
   };
 
   const sentAlert = (text) => {
@@ -48,14 +40,14 @@ const Main = () => {
       <Form
         addLocation={addLocation}
         sentAlert={sentAlert}
-        addPromiseLocation={addPromiseLocation}
+        addPromiseLocation={weatherStore.addPromiseLocation}
       />
 
       <div className="button__wrapper">
         <Button onClick={() => clearLocations()}>Clear</Button>
       </div>
 
-      <LocationsList locations={locations} />
+      <LocationsList />
       <Alert visible={alertState} text={alertText} />
     </div>
   );
