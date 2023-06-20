@@ -4,12 +4,14 @@ import LocationDisplay from "../UI/LocationDisplay";
 import LocationDisplayLoading from "../UI/LocationDisplayLoading";
 
 import "./style.sass";
+import weatherStore from "../store/weatherStore";
+import { observer } from "mobx-react-lite";
 
-const LocationsList = ({ locations }) => {
+const LocationsList = observer(() => {
   return (
     <div className="locations">
-      {locations
-        ? locations.map((location, index) =>
+      {weatherStore.weatherLocations
+        ? weatherStore.weatherLocations.map((location, index) =>
             location === "loading" ? (
               <LocationDisplayLoading key={index} />
             ) : (
@@ -19,6 +21,6 @@ const LocationsList = ({ locations }) => {
         : ""}
     </div>
   );
-};
+});
 
 export default LocationsList;
