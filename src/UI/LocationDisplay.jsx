@@ -16,7 +16,7 @@ const LocationDisplay = ({ location }) => {
   return (
     <div
       className="LocationDisplay"
-      onClick={() => navigate(`/forecast/${location.name.toLowerCase()}`)}
+      onClick={() => navigate(`/forecast/${location.name.toLowerCase().replace("'", "")}`)}
     >
       <div className="LocationDisplayCity">{location.name}</div>
       <div className="LocationDisplayImage">
