@@ -45,7 +45,7 @@ const Form = ({ addLocation, addPromiseLocation, sentAlert }) => {
         onKeyPress={(e) => (e.key === "Enter" ? fetchName() : "")}
         type="text"
       />
-      <Button onClick={() => fetchName()}>Add</Button>
+      <Button onClick={() => fetchName()}>Добавить</Button>
     </div>
   );
 };
