@@ -20,7 +20,7 @@ const Form = ({ addLocation, addPromiseLocation, sentAlert }) => {
     );
 
     if (res !== undefined && res.length) fetchWeather(res[0]);
-    else sentAlert("Location not found ");
+    else sentAlert("Локация не найдена");
 
     setLocation("");
   };
