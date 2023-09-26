@@ -51,7 +51,7 @@ const Forecast = () => {
             style={{ margin: "0 auto", marginTop: 50, width: 500 }}
             onClick={() => navigate("/")}
           >
-            Back
+            Назад
           </Button>
           <ForecastList forecasts={forecastData.list.splice(0, 9)} />
         </div>
