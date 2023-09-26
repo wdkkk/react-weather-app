@@ -20,7 +20,7 @@ const Main = () => {
   const addLocation = (location) => {
     const res = weatherStore.addLocation(location);
 
-    if (res === false) sentAlert("This location is already on the list");
+    if (res === false) sentAlert("Локация уже содержится в списке");
   };
 
   const clearLocations = () => {
