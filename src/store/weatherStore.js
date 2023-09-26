@@ -21,7 +21,8 @@ class WeatherStore {
     this.weatherLocations = [];
   }
   addPromiseLocation = () => {
-    this.weatherLocations.push("loading");
+    // this.weatherLocations.push("loading");
+    this.weatherLocations = ["loading", ...this.weatherLocations]
   };
 }
 
