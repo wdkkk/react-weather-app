@@ -44,7 +44,7 @@ const Main = () => {
       />
 
       <div className="button__wrapper">
-        <Button onClick={() => clearLocations()}>Clear</Button>
+        <Button onClick={() => clearLocations()}>Очистить список</Button>
       </div>
 
       <LocationsList />
