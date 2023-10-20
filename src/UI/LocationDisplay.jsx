@@ -15,12 +15,8 @@ const LocationDisplay = ({ location }) => {
       onClick={() => navigate(`/forecast/${location.name.toLowerCase().replace("'", "")}`)}
     >
       <div className="LocationDisplayCity">{location.name}</div>
-      <div className="LocationDisplayImage">
-        {weatherDesc === "loading" ? (
-          <div className="loading"></div>
-        ) : (
-          <img src={constants.IMG_URL.location.weather[0].icon} alt="" />
-        )}
+      <div className="LocationDisplayImage">    
+        <img src={constants.IMG_URL.location.weather[0].icon} alt="" />
       </div>
       <div className="LocationDisplayTemp">{location.main.temp}°C</div>
       <div className="LocationDisplayDesc">{location.weather[0].main}</div>
