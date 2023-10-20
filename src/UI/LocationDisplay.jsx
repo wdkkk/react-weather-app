@@ -2,16 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./style.sass";
-import weather from "../constants/weather";
+import constants from "../constants/constants";
 
 import weatherStore from "../store/weatherStore";
 
 const LocationDisplay = ({ location }) => {
   const navigate = useNavigate();
-
-  const weatherDesc = weather.find((o) => o.name === location.weather[0].main)
-    ? weather.find((o) => o.name === location.weather[0].main)
-    : "loading";
 
   return (
     <div
@@ -23,7 +19,7 @@ const LocationDisplay = ({ location }) => {
         {weatherDesc === "loading" ? (
           <div className="loading"></div>
         ) : (
-          <img src={weatherDesc.IMG_URL} alt="" />
+          <img src={constants.IMG_URL.location.weather[0].icon} alt="" />
         )}
       </div>
       <div className="LocationDisplayTemp">{location.main.temp}°C</div>
