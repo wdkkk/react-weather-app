@@ -16,7 +16,7 @@ const LocationDisplay = ({ location }) => {
     >
       <div className="LocationDisplayCity">{location.name}</div>
       <div className="LocationDisplayImage">    
-        <img src={constants.IMG_URL + location.weather[0].icon} alt="" />
+        <img src={`${constants.IMG_URL}${location.weather[0].icon}.png`} alt="" />
       </div>
       <div className="LocationDisplayTemp">{location.main.temp}°C</div>
       <div className="LocationDisplayDesc">{location.weather[0].main}</div>
